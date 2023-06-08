@@ -1,0 +1,10 @@
+---
+- name: Deploy Nginx web application
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Apply Kubernetes objects
+      become: yes
+      command: kubectl apply -f nginx-webapp.yaml
+      args:
+        chdir: /path/to/your/kubernetes/files
