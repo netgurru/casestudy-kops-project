@@ -1,0 +1,52 @@
+---
+apiVersion: kops.k8s.io/v1alpha2
+kind: Cluster
+metadata:
+  name: my-k8s-cluster.example.com
+spec:
+  api:
+    loadBalancer:
+      type: Public
+  nodeGroups:
+  - name: ig1-nodes
+    minSize: 1
+    maxSize: 5
+    instances: # Define the instance types and lifecycle
+      - instanceGroupType: mixedInstances
+        instances:
+          - instanceType: m5.large
+            weightedCapacity: 4
+            spotPrice: 0.04
+            spot: true
+          - instanceType: m5.large
+            weightedCapacity: 4
+            onDemandBaseCapacity: 1
+            onDemandPercentageAboveBaseCapacity: 50
+  - name: ig2-nodes
+    minSize: 1
+    maxSize: 5
+    instances: # Define the instance types and lifecycle
+      - instanceGroupType: mixedInstances
+        instances:
+          - instanceType: m5.large
+            weightedCapacity: 4
+            spotPrice: 0.04
+            spot: true
+          - instanceType: m5.large
+            weightedCapacity: 4
+            onDemandBaseCapacity: 1
+            onDemandPercentageAboveBaseCapacity: 50
+  - name: ig3-nodes
+    minSize: 1
+    maxSize: 5
+    instances: # Define the instance types and lifecycle
+      - instanceGroupType: mixedInstances
+        instances:
+          - instanceType: m5.large
+            weightedCapacity: 4
+            spotPrice: 0.04
+            spot: true
+          - instanceType: m5.large
+            weightedCapacity: 4
+            onDemandBaseCapacity: 1
+            onDemandPercentageAboveBaseCapacity: 50
