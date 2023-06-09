@@ -105,41 +105,7 @@ spec:
 
 This configuration sets the minimum number of replicas to 1 and the maximum to 5. It also specifies that autoscaling should be based on CPU utilization, targeting an average utilization of 50%.
 
-Step 4: Implement configuration management with Ansible:
-
-Using Ansible for configuration management involves creating Ansible playbooks to manage configurations. Assuming you have Ansible installed and configured:
-
-Create a playbook file named `configure-webapp.yaml` and add the desired configurations for your web application:
-
-```yaml
-- name: Configure web application
-  hosts: all
-  become: true
-  tasks:
-    - name: Copy configuration file
-      copy:
-        src: files/webapp.conf
-        dest: /etc/webapp/webapp.conf
-      notify:
-        - Restart webapp
-    - name: Install required packages
-      apt:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - package1
-        - package2
-    # Add more tasks as needed
-  handlers:
-    - name: Restart webapp
-      systemd:
-        name: webapp
-        state: restarted
-```
-
-Replace `files/webapp.conf` with the path to your web application's configuration file. Adjust the tasks as needed to configure your application.
-
-Step 5: Use Helm to render Kubernetes objects for reusability:
+Step 4: Use Helm to render Kubernetes objects for reusability:
 
 
 

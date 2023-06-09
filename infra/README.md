@@ -72,22 +72,7 @@ spec:
 
 This configuration scales the Deployment between 1 and 5 replicas based on CPU utilization, targeting 80% utilization.
 
-4. Use Ansible for basic configuration management. You can create an Ansible playbook (`nginx-webapp-playbook.yml`) to deploy the Kubernetes objects. Make sure you have the Kubernetes modules installed in Ansible.
-
-```yaml
----
-- name: Deploy Nginx web application
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Apply Kubernetes objects
-      become: yes
-      command: kubectl apply -f nginx-webapp.yaml
-      args:
-        chdir: /path/to/your/kubernetes/files
-```
-
-5. Use Helm to render Kubernetes objects for reusability. Helm provides a templating engine to generate Kubernetes manifests. Here's an example Helm chart structure:
+4. Use Helm to render Kubernetes objects for reusability. Helm provides a templating engine to generate Kubernetes manifests. Here's an example Helm chart structure:
 
 ```
 your-chart/
