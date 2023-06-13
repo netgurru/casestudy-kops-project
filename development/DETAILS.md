@@ -1,11 +1,11 @@
-To develop the web application with the specified requirements, you can follow these steps:
+To develop the web application with the specified requirements, here are the steps:
 
-1. Choose a programming language and framework: For this example, let's use Python with the Flask framework for the backend application.
+1. For this example, we are using Python with the Flask framework for the backend application.
 
-2. Set up your project environment:
-   - Install Python and pip (Python package manager) on your machine.
-   - Create a new directory for your project and navigate to it in the terminal.
-   - Initialize a virtual environment to keep your project dependencies isolated:
+2. Set up the project environment:
+   - Install Python and pip (Python package manager) on our machine.
+   - Create a new directory for our project and navigate to it in the terminal.
+   - Initialize a virtual environment to keep our project dependencies isolated:
      ```
      python3 -m venv venv
      source venv/bin/activate
@@ -26,7 +26,7 @@ import boto3
 app = Flask(__name__)
 
 # Configure AWS credentials for S3 access
-# Replace 'YOUR_AWS_ACCESS_KEY' and 'YOUR_AWS_SECRET_KEY' with your actual credentials
+# Replace 'YOUR_AWS_ACCESS_KEY' and 'YOUR_AWS_SECRET_KEY' with our actual credentials
 s3 = boto3.client(
     's3',
     aws_access_key_id='YOUR_AWS_ACCESS_KEY',
@@ -44,7 +44,7 @@ def upload():
         # Process the uploaded CSV file
         lines = file.stream.read().decode("UTF-8").split("\n")
         for line in lines:
-            print(line)  # Replace with your processing logic
+            print(line)  # Replace with processing logic
 
         # Upload the processed CSV file to S3
         s3.upload_fileobj(file, 'your-bucket-name', file.filename)
@@ -103,7 +103,7 @@ boto3
 ```
 
 8. Build and run the Docker image:
-   - Make sure you have Docker installed on your machine.
+   - Make sure we have Docker installed on our machine.
    - Open a terminal, navigate to the project directory, and run the following commands:
 
 ```
@@ -191,10 +191,10 @@ spec:
       targetPort: 5000
 ```
 
-10. Modify the placeholders in the YAML files (e.g., `YOUR_AWS_ACCESS_KEY`, `YOUR_AWS_SECRET_KEY`, `your-bucket-name`, `your-registry/your-python-app`) with your actual values.
+10. Modify the placeholders in the YAML files (e.g., `YOUR_AWS_ACCESS_KEY`, `YOUR_AWS_SECRET_KEY`, `your-bucket-name`, `your-registry/your-python-app`) with actual values.
 
 11. Deploy the Helm charts:
-   - Make sure you have Helm installed on your machine and are connected to a Kubernetes cluster.
+   - Make sure we have Helm installed on our machine and are connected to a Kubernetes cluster.
    - Open a terminal, navigate to the directory containing the YAML files, and run the following commands:
 
 ```
@@ -202,4 +202,4 @@ helm install nginx-proxy nginx-proxy.yaml
 helm install backend-python backend-python.yaml
 ```
 
-Now you should have a web application that allows you to upload CSV files, process them, and print the content to the browser. The processed files will also be uploaded to an S3 bucket.
+Now we should have a web application that allows us to upload CSV files, process them, and print the content to the browser. The processed files will also be uploaded to an S3 bucket.

@@ -1,4 +1,4 @@
-Sure! I can help you with that. Here's a step-by-step guide to developing a basic web application that meets your requirements.
+Here's a step-by-step guide to developing a basic web application that meets the requirements.
 
 1. Choose the Technology Stack:
    For this project, we'll use Python for the backend and Flask as the web framework. We'll also use Amazon S3 for file storage. Here's an overview of the technology stack:
@@ -78,7 +78,7 @@ Sure! I can help you with that. Here's a step-by-step guide to developing a basi
    ```
 
 6. Helm Templates:
-   Inside the `helm-charts` directory, create two subdirectories: `backend` and `nginx-proxy`. Place your Helm chart files for each component in their respective directories.
+   Inside the `helm-charts` directory, create two subdirectories: `backend` and `nginx-proxy`. Place Helm chart files for each component in their respective directories.
 
    Here's a basic example of the `backend` chart's `deployment.yaml` file:
 
@@ -119,9 +119,7 @@ Sure! I can help you with that. Here's a step-by-step guide to developing a basi
      ```
 
 8. Set up S3 Storage:
-   Set up an Amazon S3 bucket for file storage. You'll need to obtain the necessary access credentials (Access Key ID and Secret Access Key) and configure the S3 SDK for Python to upload files to the bucket. You can refer to the official Amazon S3 documentation for details.
+   Set up an Amazon S3 bucket for file storage. You'll need to obtain the necessary access credentials (Access Key ID and Secret Access Key) and configure the S3 SDK for Python to upload files to the bucket. We can refer to the official Amazon S3 documentation for details.
 
 9. Implement S3 Glacier Transition:
-   To implement the S3 Glacier transition, you need to configure a lifecycle rule for your S3 bucket. This can be done through the AWS Management Console or by using the AWS SDKs and APIs. You'll need to define a transition rule to move objects to the Glacier storage class after a certain period of time. Again, please refer to the official Amazon S3 documentation for detailed instructions.
-
-With these steps, you should have a basic web application that allows CSV file uploads, processes the files, uploads them to Amazon S3, and implements S3 Glacier transition. The Dockerfile and Helm templates will help you containerize and deploy the application. Feel free to customize the application and the deployment as per your requirements.
+   To implement the S3 Glacier transition, we need to configure a lifecycle rule for our S3 bucket. This can be done through the AWS Management Console or by using the AWS SDKs and APIs. You'll need to define a transition rule to move objects to the Glacier storage class after a certain period of time. Again, please refer to the official Amazon S3 documentation for detailed instructions.

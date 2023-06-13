@@ -101,7 +101,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/autoscaler/maste
 ```yaml
 $ kubectl -n kube-system edit configmap cluster-autoscaler
 ```
-Replace `<YOUR CLUSTER NAME>` with the name of your cluster and save the changes.
+Replace `<OUR CLUSTER NAME>` with the name of our cluster and save the changes.
 
 3. Apply the updated ConfigMap:
 ```yaml

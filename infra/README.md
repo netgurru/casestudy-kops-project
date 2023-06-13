@@ -1,4 +1,4 @@
-To achieve the requirements mentioned, you can follow the steps outlined below:
+To achieve the requirements mentioned, we can follow the steps outlined below:
 
 1. Create a Deployment with Nginx and the web application running in the same pod. The web application should have access to shared storage for public files. Here's an example YAML file (`nginx-webapp.yaml`) for the Deployment:
 
@@ -83,9 +83,9 @@ your-chart/
     service.yaml
 ```
 
-In the `deployment.yaml` and `service.yaml` files inside the `templates` directory, you can use Helm templating syntax to define the Kubernetes objects and use values from the `values.yaml` file. For example, you can reference the image version or number of replicas from `values.yaml` in the Deployment template.
+In the `deployment.yaml` and `service.yaml` files inside the `templates` directory, we can use Helm templating syntax to define the Kubernetes objects and use values from the `values.yaml` file. For example, we can reference the image version or number of replicas from `values.yaml` in the Deployment template.
 
-Once you have the Helm chart ready, you can use the Helm CLI to render Kubernetes objects:
+Once we have the Helm chart ready, we can use the Helm CLI to render Kubernetes objects:
 
 ```shell
 helm template your-chart /path/to/your/chart --output-dir /path/to/rendered/objects
@@ -93,6 +93,6 @@ helm template your-chart /path/to/your/chart --output-dir /path/to/rendered/obje
 
 This command will render the Kubernetes objects based on the template and store them in the specified output directory.
 
-By following these steps, you should have a deployment with Nginx and the web
+By following these steps, we should have a deployment with Nginx and the web
 
- application running in the same pod, sharing public files through shared storage, exposed with a service object, and implementing auto-scaling. Additionally, you will use Ansible for configuration management and Helm for rendering reusable Kubernetes objects.
+ application running in the same pod, sharing public files through shared storage, exposed with a service object, and implementing auto-scaling. Additionally, we will use Ansible for configuration management and Helm for rendering reusable Kubernetes objects.
